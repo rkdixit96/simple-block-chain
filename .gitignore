@@ -1,0 +1,8 @@
+# vscode
+.vscode
+
+# python cache
+__pycache__
+
+# virtual environment
+simple-block-chain

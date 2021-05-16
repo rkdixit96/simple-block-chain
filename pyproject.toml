@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "simple-block-chain"
+version = "0.1.0"
+description = ""
+authors = ["Krishna Dixit <rkdixit96@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+pylint = "^2.8.2"
+Flask = "^2.0.0"
+autopep8 = "^1.5.7"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
