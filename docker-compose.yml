@@ -1,0 +1,48 @@
+version: "3"
+
+services:
+    node_builder:
+        image: motu-node
+        working_dir: /motucoin
+        build:
+            context: .
+            dockerfile: Dockerfile
+
+    node1:
+        image: motu-node
+        command: python /motucoin/motunode.py
+        volumes: 
+            - ./motuchain.py:/motucoin/motuchain.py
+            - ./motunode.py:/motucoin/motunode.py
+        environment: 
+            NODE_USER: user1
+        ports: 
+            - 5001:5000
+        depends_on: 
+            - node_builder
+    
+    node2:
+        image: motu-node
+        command: python /motucoin/motunode.py
+        volumes: 
+            - ./motuchain.py:/motucoin/motuchain.py
+            - ./motunode.py:/motucoin/motunode.py
+        environment: 
+            NODE_USER: user2
+        ports: 
+            - 5002:5000
+        depends_on: 
+            - node_builder
+    
+    node3:
+        image: motu-node
+        command: python /motucoin/motunode.py
+        volumes: 
+            - ./motuchain.py:/motucoin/motuchain.py
+            - ./motunode.py:/motucoin/motunode.py
+        environment: 
+            NODE_USER: user3
+        ports: 
+            - 5003:5000
+        depends_on: 
+            - node_builder
